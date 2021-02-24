@@ -19,40 +19,40 @@ img {
 }
 
 #main {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#main .left {
-  height: 100%;
-}
-
-#main .right {
-  height: 100%;
-}
-
-aside {
-  float: left;
+#main aside {
   width: 30%;
-  background-color: #ebebeb;
+  background-color: #7dd3da;
   padding: 3em 4em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-aside .logo {
+#main aside .logo {
   margin-bottom: 3em;
 }
 
-nav, main {
-  float: right;
-  background-color: #12668d;
+#main .right {
   width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main .right nav, #main .right main {
+  background-color: rgba(38, 38, 39, 0.87);
   color: #fff;
   padding: 3em 4em;
   -webkit-box-sizing: border-box;
@@ -69,14 +69,14 @@ nav, main {
           justify-content: space-between;
 }
 
-nav ul, main ul {
+#main .right nav ul, #main .right main ul {
   list-style: none;
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: 200;
 }
 
-nav ul li, main ul li {
+#main .right nav ul li, #main .right main ul li {
   float: left;
   width: auto;
   padding: 0 1em;
@@ -84,11 +84,11 @@ nav ul li, main ul li {
           box-sizing: border-box;
 }
 
-nav ul li:last-child, main ul li:last-child {
+#main .right nav ul li:last-child, #main .right main ul li:last-child {
   padding-right: 0;
 }
 
-main {
+#main .right main {
   background-color: #fff;
   color: black;
   -webkit-box-orient: vertical;
@@ -97,7 +97,7 @@ main {
           flex-direction: column;
 }
 
-main .content {
+#main .right main .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,9 +105,14 @@ main .content {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 2em;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-main .content .item {
+#main .right main .content .item {
   --paddingA: 1em;
   --widthA: 100% / 4;
   width: calc(var(--widthA) - var(--paddingA));
@@ -120,25 +125,117 @@ main .content .item {
       -ms-flex-direction: column;
           flex-direction: column;
   max-height: 28em;
+  margin-bottom: 2em;
 }
 
-main .content .item .photo {
+#main .right main .content .item .photo {
   height: 15em;
 }
 
-main .content .item .title {
+#main .right main .content .item .title {
   margin: 0.6em 0;
   font-size: 1.3em;
 }
 
-main .content .item .description {
+#main .right main .content .item .description {
   line-height: 1.4;
 }
 
-main .content .item img {
+#main .right main .content .item img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media only screen and (max-width: 1400px) {
+  #main .right main .content .item {
+    --paddingA: 1em;
+    --widthA: 100% / 2;
+    width: calc(var(--widthA) - var(--paddingA));
+    max-height: 28em;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #main {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  #main aside {
+    width: 100%;
+  }
+  #main .right {
+    width: 100%;
+  }
+  #main .right nav, #main .right main {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+  }
+  #main .right main {
+    position: relative;
+    z-index: 1;
+  }
+  #main .right main .content .item {
+    --paddingA: 1em;
+    --widthA: 100% / 2;
+    width: calc(var(--widthA) - var(--paddingA));
+    max-height: 28em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #main .right nav, #main .right main {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  #main .right nav ul, #main .right main ul {
+    width: 100%;
+    margin-bottom: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #main .right .headertext {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #main .right nav ul, #main .right main ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #main .right nav ul li, #main .right main ul li {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0.3em 0;
+  }
+  #main .right main .content .item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #main .right main {
+    padding: 2em 1em;
+  }
+  #main aside {
+    padding: 2em 1em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

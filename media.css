@@ -1,0 +1,9 @@
+@media only screen and (min-width: 801px) and (max-width: 1400px) {
+  #main .right main .content .item {
+    --paddingA: 1em;
+    --widthA: 100% / 2;
+    width: calc(var(--widthA) - var(--paddingA));
+    max-height: 28em;
+  }
+}
+/*# sourceMappingURL=media.css.map */
