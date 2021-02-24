@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+#main {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#main .left {
+  height: 100%;
+}
+
+#main .right {
+  height: 100%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+  background-color: #ebebeb;
+  padding: 3em 4em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+aside .logo {
+  margin-bottom: 3em;
+}
+
+nav, main {
+  float: right;
+  background-color: #12668d;
+  width: 70%;
+  color: #fff;
+  padding: 3em 4em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav ul, main ul {
+  list-style: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+nav ul li, main ul li {
+  float: left;
+  width: auto;
+  padding: 0 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav ul li:last-child, main ul li:last-child {
+  padding-right: 0;
+}
+
+main {
+  background-color: #fff;
+  color: black;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+main .content .item {
+  --paddingA: 1em;
+  --widthA: 100% / 4;
+  width: calc(var(--widthA) - var(--paddingA));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 28em;
+}
+
+main .content .item .photo {
+  height: 15em;
+}
+
+main .content .item .title {
+  margin: 0.6em 0;
+  font-size: 1.3em;
+}
+
+main .content .item .description {
+  line-height: 1.4;
+}
+
+main .content .item img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */
